@@ -14,8 +14,8 @@
             Console.WriteLine();
             Console.WriteLine("1 - Somar");
             Console.WriteLine("2 - Subtrair");
-            Console.WriteLine("4 - Multiplicar");
-            Console.WriteLine("3 - Dividir");
+            Console.WriteLine("3 - Multiplicar");
+            Console.WriteLine("4 - Dividir");
             Console.WriteLine("5 - Sair");
             Console.WriteLine();
             ConsoleMsg.Blue("---------------------------------");
@@ -36,8 +36,8 @@
             {
                 case 1: Soma(); break;
                 case 2: Subtracao(); break;
-                case 3: Divisao(); break;
-                case 4: Multiplicacao(); break;
+                case 3: Multiplicacao(); break;
+                case 4: Divisao(); break;
                 default: Menu(); break;
             }
         }
