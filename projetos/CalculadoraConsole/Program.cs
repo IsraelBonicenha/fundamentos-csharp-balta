@@ -1,4 +1,6 @@
-﻿namespace CalculadoraConsole
+﻿using System;
+
+namespace CalculadoraConsole
 {
     internal class Program
     {
@@ -40,6 +42,31 @@
                 case 4: Divisao(); break;
                 default: Menu(); break;
             }
+        }
+
+        static float LerNumero(string msg)
+        {
+            float num;
+            Console.Write(msg);
+            while (!float.TryParse(Console.ReadLine(), out num))
+            {
+                Console.Clear();
+                ConsoleMsg.Red("Valor inválido!");
+                Console.Write("Por favor, tente novamente: ");
+            }
+            return num;
+        }
+
+        static float RealizarOperacao (short opcao, float num1, float num2)
+        {
+            return opcao switch
+            {
+                1 => Calculadora.Somar(num1, num2),
+                2 => Calculadora.Subtrair(num1, num2),
+                3 => Calculadora.Multiplicar(num1, num2),
+                4 => Calculadora.Dividir(num1, num2),
+                _ => throw new InvalidOperationException("Operação inválida!"),
+            };
         }
 
         static void Soma()
