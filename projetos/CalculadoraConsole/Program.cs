@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Menu();
+            while (true)
+                Menu();
         }
 
         static void Menu()
