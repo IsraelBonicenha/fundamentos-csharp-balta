@@ -21,7 +21,7 @@
             ConsoleMsg.Blue("---------------------------------");
             Console.Write("Digite uma opção: ");
 
-            if (!short.TryParse(Console.ReadLine(), out short _))
+            if (!short.TryParse(Console.ReadLine(), out short opcao))
             {
                 Console.Clear();
                 ConsoleMsg.Red("Opção inválida");
@@ -29,15 +29,15 @@
                 Menu();
             }
 
-            short res = short.Parse(Console.ReadLine());
+            if (opcao == 5)
+                Environment.Exit(0);
 
-            switch (res)
+            switch (opcao)
             {
                 case 1: Soma(); break;
                 case 2: Subtracao(); break;
                 case 3: Divisao(); break;
                 case 4: Multiplicacao(); break;
-                case 5: System.Environment.Exit(0); break;
                 default: Menu(); break;
             }
         }
