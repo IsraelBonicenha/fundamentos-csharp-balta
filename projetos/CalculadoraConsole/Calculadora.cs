@@ -14,5 +14,6 @@
             }
             return num1 / num2;
         }
+        public static float Exponenciar(float num1, float num2) => (float)Math.Pow(num1, num2);
     }
 }

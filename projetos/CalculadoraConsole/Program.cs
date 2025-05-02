@@ -17,7 +17,8 @@
             Console.WriteLine("2 - Subtrair");
             Console.WriteLine("3 - Multiplicar");
             Console.WriteLine("4 - Dividir");
-            Console.WriteLine("5 - Sair");
+            Console.WriteLine("5 - Exponenciar");
+            Console.WriteLine("6 - Sair");
             Console.WriteLine();
             ConsoleMsg.Blue("---------------------------------");
             Console.Write("Digite uma opção: ");
@@ -30,7 +31,7 @@
                 Menu();
             }
 
-            if (opcao == 5)
+            if (opcao == 6)
                 Environment.Exit(0);
 
             try
@@ -70,6 +71,7 @@
                 2 => Calculadora.Subtrair(num1, num2),
                 3 => Calculadora.Multiplicar(num1, num2),
                 4 => Calculadora.Dividir(num1, num2),
+                5 => Calculadora.Exponenciar(num1, num2),
                 _ => throw new InvalidOperationException("Operação inválida!"),
             };
         }
