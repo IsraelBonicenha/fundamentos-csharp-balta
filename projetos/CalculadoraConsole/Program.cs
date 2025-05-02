@@ -10,7 +10,7 @@
         static void Menu()
         {
             Console.Clear();
-            Console.WriteLine("---------- CALCULADORA ----------");
+            ConsoleMsg.Blue("---------- CALCULADORA ----------");
             Console.WriteLine();
             Console.WriteLine("1 - Somar");
             Console.WriteLine("2 - Subtrair");
@@ -18,8 +18,16 @@
             Console.WriteLine("3 - Dividir");
             Console.WriteLine("5 - Sair");
             Console.WriteLine();
-            Console.WriteLine("---------------------------------");
+            ConsoleMsg.Blue("---------------------------------");
             Console.Write("Digite uma opção: ");
+
+            if (!short.TryParse(Console.ReadLine(), out short _))
+            {
+                Console.Clear();
+                ConsoleMsg.Red("Opção inválida");
+                Console.ReadKey();
+                Menu();
+            }
 
             short res = short.Parse(Console.ReadLine());
 
